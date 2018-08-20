@@ -1,0 +1,33 @@
+{
+  "builders": [{
+    "pull": false,
+    "type": "docker",
+    "image": "ubuntu",
+    "commit": true,
+    "changes": [
+            "EXPOSE 5000",
+            "CMD [\"python\", \"\/tmp\/hello.py\"]"
+      ]
+    }],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "flask_deps.sh"
+    },
+
+    {
+      "type": "file",
+      "source": "hello.py",
+      "destination": "/tmp/hello.py"
+    }
+  ],
+
+  "post-processors": [
+    {
+      "type": "docker-tag",
+      "repository": "flask-packer",
+      "tag": "latest"
+    }
+  ]
+}
