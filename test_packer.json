@@ -29,5 +29,6 @@
       "repository": "flask-packer",
       "tag": "latest"
     }
-  ]
+  ],
+    "_comment": "docker-push"
 }
