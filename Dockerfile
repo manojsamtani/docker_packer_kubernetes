@@ -9,5 +9,4 @@ RUN pip install flask
 COPY hello.py /tmp/hello.py
 
 EXPOSE 5001
-
 CMD ["python","/tmp/hello.py"]
