@@ -6,7 +6,6 @@ FROM python:2.7.10
 #    apt-get clean all
 
 RUN pip install flask
-
 COPY hello.py /tmp/hello.py
 
 EXPOSE 5001
